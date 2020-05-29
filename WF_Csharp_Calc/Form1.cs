@@ -16,5 +16,39 @@ namespace WF_Csharp_Calc
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double a, b;
+            a = Convert.ToDouble(textBox1.Text);
+            b = Convert.ToDouble(textBox2.Text);
+
+            switch (comboBox1.Text)
+            {
+                case "+":
+                    textBox3.Text = Convert.ToString(a + b);
+                    break;
+
+                case "-":
+                    textBox3.Text = Convert.ToString(a - b);
+                    break;
+
+                case "*":
+                    textBox3.Text = Convert.ToString(a * b);
+                    break;
+
+                case "/":
+                    textBox3.Text = Convert.ToString(a / b);
+                    break;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            comboBox1.Text = null;
+        }
     }
 }
