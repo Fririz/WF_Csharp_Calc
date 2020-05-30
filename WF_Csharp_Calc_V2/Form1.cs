@@ -12,9 +12,9 @@ namespace WF_Csharp_Calc_V2
 {
     public partial class Form1 : Form
     {
-        public string FirstNumber;
-        public string SecondNumber;
-        public string action;
+        public string FirstNumber { get; set; }
+        public string SecondNumber { get; set; }
+        public string action { get; set; }
 
         public Form1()
         {
@@ -92,29 +92,60 @@ namespace WF_Csharp_Calc_V2
         //plus
         private void Button11_Click(object sender, EventArgs e)
         {
-            action = "plus";
+            action = "+";
         }
         //minus
         private void button_minus_Click(object sender, EventArgs e)
         {
-            action = "minus";
+            action = "-";
         }
 
         //multiply
         private void button_multiply_Click(object sender, EventArgs e)
         {
-            action = "multiply";
+            action = "*";
         }
 
         private void button_division_Click(object sender, EventArgs e)
         {
-            action = "division";
+            action = "/";
         }
 
         private void button_equals_Click(object sender, EventArgs e)
         {
-            int FirstNumberReady = Convert.ToInt32(FirstNumber);
-            int SecondNumberReady = Convert.ToInt32(SecondNumber);
+            double FirstNumberReady = Convert.ToDouble(FirstNumber);
+            double SecondNumberReady = Convert.ToDouble(SecondNumber);
+            if (action == "+")
+            {
+                double answer = FirstNumberReady + SecondNumberReady;
+                textBox1.Text = Convert.ToString(answer);
+            }
+
+            else if (action == "-")
+            {
+                double answer = FirstNumberReady - SecondNumberReady;
+                textBox1.Text = Convert.ToString(answer);
+            }
+
+            if (action == "*")
+            {
+                double answer = FirstNumberReady * SecondNumberReady;
+                textBox1.Text = Convert.ToString(answer);
+            }
+
+            if (action == "/")
+            {
+                double answer = FirstNumberReady / SecondNumberReady;
+                textBox1.Text = Convert.ToString(answer);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FirstNumber = null;
+            SecondNumber = null;
+            action = null;
+            textBox1.Text = null;
         }
     }
 }

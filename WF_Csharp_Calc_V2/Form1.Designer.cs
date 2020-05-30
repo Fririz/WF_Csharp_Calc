@@ -218,6 +218,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(6, 6);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(278, 49);
             this.textBox1.TabIndex = 15;
             // 
@@ -238,8 +239,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(278, 63);
             this.button1.TabIndex = 17;
-            this.button1.Text = "Delete";
+            this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
